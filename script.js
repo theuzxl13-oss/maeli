@@ -7,7 +7,8 @@
    -------------------------------------------------------------
    arquivo   → nome do arquivo dentro de assets/images/
    categoria → "juntos" (carinho, passeios) ou "fe" (terno, igreja, cultos)
-   formato   → "retrato" (4:5), "paisagem" (3:2) ou "quadrado" (1:1)
+   formato   → "vertical" (9:16, foto de celular inteira), "retrato" (4:5),
+               "paisagem" (3:2) ou "quadrado" (1:1)
    legenda   → texto exibido junto da foto
    descricao → texto alternativo (acessibilidade), curto e neutro
 
@@ -21,72 +22,37 @@ const FOTOS = [
   {
     arquivo: "foto-01.jpg",
     categoria: "juntos",
-    formato: "retrato",
-    legenda: "Existem momentos que passam, mas nunca deixam de morar dentro da gente.",
-    descricao: "Fotografia nossa, juntos"
+    formato: "vertical",
+    legenda: "Seu sorriso nessa foto ainda me lembra que eram justamente essas pequenas coisas que tornavam meus dias tão especiais.",
+    descricao: "Nós dois sorrindo, usando chapéus"
   },
   {
     arquivo: "foto-02.jpg",
     categoria: "juntos",
     formato: "paisagem",
-    legenda: "Hoje percebo que eram justamente essas pequenas coisas que tornavam meus dias tão especiais.",
-    descricao: "Fotografia nossa, juntos"
+    legenda: "Se pudesse reviver alguns momentos, escolheria novamente aqueles em que tinha você ao meu lado.",
+    descricao: "Selfie nossa em um passeio, num dia de sol"
   },
   {
     arquivo: "foto-03.jpg",
     categoria: "fe",
-    formato: "retrato",
-    legenda: "Olhar para essa fotografia me faz lembrar de quanto era especial ter você ao meu lado também na caminhada da fé. Sua presença faz falta.",
-    descricao: "Fotografia nossa em um momento de fé"
+    formato: "vertical",
+    legenda: "Naquele dia, a mesma palavra estava escrita em nós dois: creio. Olhar para essa fotografia me faz lembrar de quanto era especial ter você ao meu lado também na caminhada da fé. Sua presença faz falta.",
+    descricao: "Nós dois com camisetas pretas escritas \"Creio\""
   },
   {
     arquivo: "foto-04.jpg",
     categoria: "juntos",
-    formato: "quadrado",
-    legenda: "Se pudesse reviver alguns momentos, escolheria novamente aqueles em que tinha você ao meu lado.",
-    descricao: "Fotografia nossa, juntos"
+    formato: "paisagem",
+    legenda: "Testa com testa, um momento só nosso. Existem momentos que passam, mas nunca deixam de morar dentro da gente.",
+    descricao: "Nós dois com as testas encostadas, mostrando os anéis"
   },
   {
     arquivo: "foto-05.jpg",
     categoria: "fe",
-    formato: "paisagem",
-    legenda: "Mais do que estar no mesmo lugar, era especial compartilhar com você momentos que fortaleciam nossa fé.",
-    descricao: "Fotografia nossa em um momento de fé"
-  },
-  {
-    arquivo: "foto-06.jpg",
-    categoria: "juntos",
-    formato: "retrato",
-    legenda: "Guardo cada detalhe desse dia com um carinho que o tempo não conseguiu diminuir.",
-    descricao: "Fotografia nossa, juntos"
-  },
-  {
-    arquivo: "foto-07.jpg",
-    categoria: "fe",
-    formato: "retrato",
-    legenda: "Existem momentos que vão além de uma fotografia. São lembranças de uma caminhada que teve um significado muito especial para mim.",
-    descricao: "Fotografia nossa em um momento de fé"
-  },
-  {
-    arquivo: "foto-08.jpg",
-    categoria: "juntos",
-    formato: "paisagem",
-    legenda: "Sinto falta da sua presença nas coisas mais simples — eram elas que davam sentido aos meus dias.",
-    descricao: "Fotografia nossa, juntos"
-  },
-  {
-    arquivo: "foto-09.jpg",
-    categoria: "fe",
-    formato: "quadrado",
-    legenda: "Hoje sinto falta não apenas da sua companhia, mas também de viver ao seu lado aqueles momentos tão importantes na presença de Deus.",
-    descricao: "Fotografia nossa em um momento de fé"
-  },
-  {
-    arquivo: "foto-10.jpg",
-    categoria: "fe",
-    formato: "retrato",
-    legenda: "Algumas lembranças carregam sentimentos que as palavras dificilmente conseguem explicar. Essa é uma delas.",
-    descricao: "Fotografia nossa em um momento de fé"
+    formato: "vertical",
+    legenda: "Mais do que estar no mesmo lugar, era especial compartilhar com você momentos que fortaleciam nossa fé. Hoje sinto falta não apenas da sua companhia, mas também de viver ao seu lado aqueles momentos tão importantes na presença de Deus.",
+    descricao: "Nós dois arrumados, eu de terno e gravata rosa, você de camisa rosa"
   }
 ];
 
@@ -111,28 +77,21 @@ const PASTA_FOTOS = "assets/images/";
 const VIDEOS = [
   {
     src: "assets/videos/video-01.mp4",
-    title: "Nós dois",
-    caption: "Às vezes, tudo o que eu queria era poder voltar por alguns segundos e viver novamente um momento como esse."
+    poster: "assets/videos/capa-01.jpg",
+    title: "Lado a lado",
+    caption: "É estranho como momentos que pareciam tão simples, como caminhar ao seu lado, se tornam lembranças tão preciosas."
   },
   {
     src: "assets/videos/video-02.mp4",
-    title: "Nossa caminhada de fé",
-    caption: "Assistir a esse momento me faz lembrar de como era especial ter você ao meu lado na caminhada com Deus."
-  },
-  {
-    src: "assets/videos/video-03.mp4",
-    title: "Pequenos momentos",
+    poster: "assets/videos/capa-02.jpg",
+    title: "Nossas brincadeiras",
     caption: "Seu sorriso, nossas brincadeiras e esses pequenos momentos são algumas das coisas que continuam fazendo falta."
   },
   {
-    src: "assets/videos/video-04.mp4",
-    title: "Na presença do Senhor",
-    caption: "Sinto falta de compartilhar com você esses momentos na presença do Senhor. Foram experiências que marcaram minha história."
-  },
-  {
-    src: "assets/videos/video-05.mp4",
-    title: "Simples assim",
-    caption: "É estranho como momentos que pareciam tão simples se tornam lembranças tão preciosas."
+    src: "assets/videos/video-03.mp4",
+    poster: "assets/videos/capa-03.jpg",
+    title: "Tão perto",
+    caption: "Às vezes, tudo o que eu queria era poder voltar por alguns segundos e viver novamente um momento como esse."
   }
 ];
 
@@ -147,7 +106,7 @@ const VIDEOS = [
   const HEART_PATH =
     "M16 27s-10-6.2-10-13.6A5.4 5.4 0 0 1 16 10.2a5.4 5.4 0 0 1 10 3.2C26 20.8 16 27 16 27z";
 
-  const RATIOS = { retrato: "4 / 5", paisagem: "3 / 2", quadrado: "1 / 1" };
+  const RATIOS = { vertical: "9 / 16", retrato: "4 / 5", paisagem: "3 / 2", quadrado: "1 / 1" };
   const TILTS = ["-1.2deg", "0.9deg", "-0.6deg", "1.3deg", "-0.9deg", "0.6deg"];
 
   const $ = (sel) => document.querySelector(sel);
@@ -288,7 +247,8 @@ const VIDEOS = [
   function buildGallery() {
     FOTOS.forEach((foto, i) => {
       const fig = document.createElement("figure");
-      fig.className = "memory memory--" + (foto.categoria === "fe" ? "fe" : "juntos");
+      fig.className = "memory memory--" + (foto.categoria === "fe" ? "fe" : "juntos") +
+        (foto.formato === "vertical" ? " memory--vertical" : "");
       fig.style.setProperty("--ratio", RATIOS[foto.formato] || RATIOS.retrato);
 
       const frame = document.createElement("button");

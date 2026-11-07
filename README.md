@@ -12,7 +12,7 @@ maeli/
 ├── .nojekyll
 └── assets/
     ├── images/     ← foto-01.jpg … foto-10.jpg
-    ├── videos/     ← video-01.mp4 … video-05.mp4 (de 3 a 8 vídeos)
+    ├── videos/     ← video-01.mp4 … (de 3 a 8 vídeos) e capa-01.jpg … (capas)
     └── music/      ← musica.mp3
 ```
 
@@ -45,7 +45,7 @@ Enquanto o texto não for colado, a carta mostra esse aviso entre colchetes, ent
 |-------------|---------|
 | `arquivo`   | nome do arquivo em `assets/images/` |
 | `categoria` | `"juntos"` (carinho, passeios) ou `"fe"` (terno, igreja, cultos) — `"fe"` ganha uma pequena cruz dourada |
-| `formato`   | `"retrato"`, `"paisagem"` ou `"quadrado"` — define o recorte no álbum (a versão ampliada sempre mostra a foto inteira) |
+| `formato`   | `"vertical"` (foto de celular inteira), `"retrato"`, `"paisagem"` ou `"quadrado"` — define o recorte no álbum (a versão ampliada sempre mostra a foto inteira) |
 | `legenda`   | a frase que aparece junto da foto |
 | `descricao` | texto curto para acessibilidade |
 
