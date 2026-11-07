@@ -170,6 +170,7 @@ const VIDEOS = [
       body.classList.remove("is-locked");
       content.classList.add("is-visible");
       showMusicButton();
+      preloadMusic();
       window.scrollTo(0, 0);
       setupReveals();
       setTimeout(() => {
@@ -577,6 +578,15 @@ const VIDEOS = [
     musicBtn.hidden = false;
   }
 
+  // começa a baixar a música assim que a carta é aberta,
+  // para ela tocar na hora quando o botão for tocado
+  function preloadMusic() {
+    if (unavailable || audio.dataset.preloaded) return;
+    audio.dataset.preloaded = "1";
+    audio.preload = "auto";
+    audio.load();
+  }
+
   const song = $(".song");
   const songBtn = $("#song-play");
   const songLabel = songBtn ? songBtn.querySelector(".song__play-label") : null;
@@ -611,7 +621,7 @@ const VIDEOS = [
   function toggleMusic() {
     if (unavailable) return;
     if (audio.paused) {
-      audio.volume = 0;
+      audio.volume = 0.3;
       const playing = audio.play();
       if (playing && playing.catch) playing.catch(() => { if (audio.error) markUnavailable(); });
       fadeVolume(0.55);
@@ -631,7 +641,7 @@ const VIDEOS = [
   function fadeVolume(target) {
     const start = performance.now();
     const from = audio.volume;
-    const dur = 1600;
+    const dur = 700;
     (function tick(t) {
       const k = Math.min(1, (t - start) / dur);
       audio.volume = from + (target - from) * k;
