@@ -497,21 +497,41 @@ html:not(.js) .intro { display: none; }
 
 .song__disc {
   position: relative;
-  width: 86px;
-  height: 86px;
-  margin: 0 auto 1.2rem;
+  width: 168px;
+  height: 168px;
+  margin: 0 auto 1.4rem;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background:
-    radial-gradient(circle, var(--wine-600) 0 26%, transparent 27%),
-    repeating-radial-gradient(circle, #2a0910 0 2px, #3a0d18 2px 4px);
-  box-shadow: 0 10px 24px -8px rgba(58, 13, 24, 0.6), 0 0 0 2px rgba(214, 184, 117, 0.6);
-  animation: spin 6s linear infinite;
-  animation-play-state: paused;
+  background: repeating-radial-gradient(circle, #2a0910 0 2px, #3a0d18 2px 4px);
+  box-shadow: 0 14px 30px -10px rgba(58, 13, 24, 0.6), 0 0 0 2px rgba(214, 184, 117, 0.6);
 }
-.song__disc svg { width: 20px; height: 20px; fill: var(--gold-300); }
-.song.is-playing .song__disc { animation-play-state: running; }
+
+.song__disc::before {
+  /* reflexo do vinil — gira enquanto a música toca; a foto fica parada */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 30deg, transparent 0 18%, rgba(255, 255, 255, 0.13) 25%, transparent 32% 68%, rgba(255, 255, 255, 0.10) 75%, transparent 82%);
+  animation: spin 4s linear infinite;
+  animation-play-state: paused;
+  pointer-events: none;
+}
+
+/* foto dentro do coração, no centro do disco */
+.song__photo {
+  position: relative;
+  z-index: 1;
+  width: 104px;
+  height: 104px;
+  object-fit: cover;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 30'%3E%3Cpath d='M16 29S1 20.2 1 9.4A8 8 0 0 1 16 5.6 8 8 0 0 1 31 9.4C31 20.2 16 29 16 29z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 30'%3E%3Cpath d='M16 29S1 20.2 1 9.4A8 8 0 0 1 16 5.6 8 8 0 0 1 31 9.4C31 20.2 16 29 16 29z'/%3E%3C/svg%3E") center / contain no-repeat;
+  filter: drop-shadow(0 0 1px rgba(214, 184, 117, 0.9));
+}
+
+.song.is-playing .song__disc::before { animation-play-state: running; }
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
@@ -546,22 +566,12 @@ html:not(.js) .intro { display: none; }
 }
 
 .song__lyric {
-  margin: 0 0 2rem;
+  margin: 0;
   font-family: var(--font-script);
   font-size: clamp(1.8rem, 6.6vw, 2.4rem);
   line-height: 1.4;
   color: var(--wine-600);
 }
-
-.song__play {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-.song__play svg { width: 20px; height: 20px; fill: var(--gold-300); }
-.song__play .icon-pause { display: none; }
-.song.is-playing .song__play .icon-play { display: none; }
-.song.is-playing .song__play .icon-pause { display: block; }
 
 /* =============================================================
    3. GALERIA — ÁLBUM DE LEMBRANÇAS

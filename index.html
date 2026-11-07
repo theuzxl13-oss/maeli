@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=4">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -99,8 +99,8 @@ Eu te amo, e talvez uma parte de mim sempre guarde com carinho tudo aquilo que f
     <!-- 2B. NOSSA MÚSICA — DEDICATÓRIA -->
     <section class="section song-section" id="nossa-musica" aria-labelledby="musica-titulo">
       <div class="song reveal">
-        <div class="song__disc" id="song-disc" aria-hidden="true">
-          <svg viewBox="0 0 32 32"><path d="M16 27s-10-6.2-10-13.6A5.4 5.4 0 0 1 16 10.2a5.4 5.4 0 0 1 10 3.2C26 20.8 16 27 16 27z"/></svg>
+        <div class="song__disc" id="song-disc">
+          <img class="song__photo" src="assets/images/nossa-musica.jpg" alt="Nós dois, testa com testa, mostrando os anéis" width="400" height="400" loading="lazy" decoding="async">
         </div>
         <h2 class="song__label" id="musica-titulo">Nossa música</h2>
         <p class="song__name">Aliança <span>·</span> Tribalistas</p>
@@ -111,11 +111,6 @@ Eu te amo, e talvez uma parte de mim sempre guarde com carinho tudo aquilo que f
         <p class="song__lyric">
           que diz “que se um dia eu te encontrar do jeito que eu sonhei, quem sabe ser seu par perfeito”
         </p>
-        <button class="btn btn--primary song__play" id="song-play" type="button" aria-pressed="false">
-          <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>
-          <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
-          <span class="song__play-label">Ouvir nossa música</span>
-        </button>
       </div>
     </section>
 
@@ -202,6 +197,6 @@ Eu te amo, e talvez uma parte de mim sempre guarde com carinho tudo aquilo que f
     <span class="music-toggle__label">Música</span>
   </button>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
