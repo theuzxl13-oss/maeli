@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Para você, Maeli ❤️</title>
+  <meta name="description" content="Uma carta escrita de coração, para a Maeli.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#4a1220">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%237a1f33' d='M16 28s-11-6.8-11-15A6 6 0 0 1 16 9.5 6 6 0 0 1 27 13c0 8.2-11 15-11 15z'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <!-- Corações flutuando discretamente ao fundo -->
+  <div class="hearts-bg" aria-hidden="true"></div>
+
+  <!-- =========================================================
+       1. TELA DE ENTRADA
+       ========================================================= -->
+  <section class="intro" id="intro" aria-label="Abertura">
+    <div class="intro__inner">
+      <p class="intro__to">Para você, Maeli ❤️</p>
+      <p class="intro__line">Existe algo que eu gostaria de te dizer...</p>
+
+      <div class="envelope" id="envelope" aria-hidden="true">
+        <div class="envelope__back"></div>
+        <div class="envelope__paper">
+          <span class="envelope__paper-line"></span>
+          <span class="envelope__paper-line"></span>
+          <span class="envelope__paper-line short"></span>
+          <span class="envelope__paper-heart">❤</span>
+        </div>
+        <div class="envelope__front"></div>
+        <div class="envelope__flap"></div>
+        <div class="envelope__seal">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27s-10-6.2-10-13.6A5.4 5.4 0 0 1 16 10.2a5.4 5.4 0 0 1 10 3.2C26 20.8 16 27 16 27z"/></svg>
+        </div>
+      </div>
+
+      <button class="btn btn--primary" id="open-letter" type="button">
+        Abra sua carta
+      </button>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CONTEÚDO PRINCIPAL (revelado após abrir o envelope)
+       ========================================================= -->
+  <main class="content" id="content">
+
+    <!-- 2. CARTA PRINCIPAL -->
+    <section class="section letter-section" id="carta" aria-labelledby="carta-titulo">
+      <article class="letter">
+        <span class="letter__corner letter__corner--tl" aria-hidden="true"></span>
+        <span class="letter__corner letter__corner--br" aria-hidden="true"></span>
+
+        <h1 class="letter__title" id="carta-titulo">Uma mensagem de coração...</h1>
+        <div class="ornament" aria-hidden="true"><span></span>❦<span></span></div>
+
+        <div class="letter__body" id="letter-body">
+          <!-- Os parágrafos são montados automaticamente pelo script.js
+               a partir do texto colocado no bloco "carta-texto" abaixo. -->
+        </div>
+      </article>
+    </section>
+
+    <!-- =========================================================
+         TEXTO DA CARTA
+         ---------------------------------------------------------
+         Cole o texto original da carta ENTRE as duas linhas
+         marcadas abaixo, exatamente como ele é.
+         - Não precisa de nenhuma marcação HTML.
+         - Uma linha em branco separa um parágrafo do outro.
+         - Quebras de linha simples são mantidas.
+         - Acentos, emojis e pontuação aparecem exatamente como forem
+           colados (o texto é exibido sem nenhuma alteração).
+         ========================================================= -->
+    <script type="text/plain" id="carta-texto">
+[COLE AQUI O TEXTO ORIGINAL DA CARTA]
+    </script>
+
+    <!-- 3. GALERIA DE FOTOGRAFIAS -->
+    <section class="section gallery-section" id="lembrancas" aria-labelledby="galeria-titulo">
+      <header class="section__header">
+        <h2 class="section__title" id="galeria-titulo">Nossas lembranças ❤️</h2>
+        <div class="ornament" aria-hidden="true"><span></span>✦<span></span></div>
+      </header>
+
+      <!-- As fotografias são montadas pelo script.js (lista FOTOS). -->
+      <div class="album" id="album"></div>
+    </section>
+
+    <!-- 3B. VÍDEOS — MOMENTOS QUE FICARAM PARA SEMPRE -->
+    <section class="section videos-section" id="videos" aria-labelledby="videos-titulo">
+      <header class="section__header">
+        <h2 class="section__title" id="videos-titulo">Momentos que ficaram para sempre...</h2>
+        <div class="ornament" aria-hidden="true"><span></span>✦<span></span></div>
+        <p class="section__subtitle reveal">
+          Algumas lembranças são tão especiais que merecem ser revividas em movimento. São pequenos pedaços da nossa história que continuam guardados no coração.
+        </p>
+      </header>
+
+      <!-- Os vídeos são montados pelo script.js (lista VIDEOS). -->
+      <div class="reels" id="reels"></div>
+    </section>
+
+    <!-- 4. FRASE ESPECIAL -->
+    <section class="section quote-section" id="frase" aria-label="Frase especial">
+      <div class="quote">
+        <div class="quote__heart" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path d="M16 27s-10-6.2-10-13.6A5.4 5.4 0 0 1 16 10.2a5.4 5.4 0 0 1 10 3.2C26 20.8 16 27 16 27z"/></svg>
+        </div>
+        <span class="quote__line" aria-hidden="true"></span>
+        <blockquote class="quote__text reveal">
+          Se eu pudesse voltar no tempo, faria muitas coisas de uma maneira diferente. Mas jamais mudaria o fato de ter conhecido você.
+        </blockquote>
+        <span class="quote__line" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <!-- 5. ENCERRAMENTO -->
+    <section class="section closing-section" id="encerramento" aria-label="Encerramento">
+      <div class="closing">
+        <div class="closing__heart" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path d="M16 27s-10-6.2-10-13.6A5.4 5.4 0 0 1 16 10.2a5.4 5.4 0 0 1 10 3.2C26 20.8 16 27 16 27z"/></svg>
+        </div>
+        <p class="closing__text reveal">
+          Maeli, eu não espero que uma carta apague tudo o que aconteceu. Só espero que você saiba que meu arrependimento é sincero e que o carinho que sinto por você continua aqui.
+        </p>
+        <p class="closing__love reveal">Eu te amo, Maeli! ❤️</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <button class="btn btn--ghost" id="back-top" type="button">Voltar ao início da carta</button>
+    </footer>
+  </main>
+
+  <!-- Visualização ampliada das fotografias -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotografia ampliada" hidden>
+    <button class="lightbox__close" id="lb-close" type="button" aria-label="Fechar fotografia">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lb-prev" type="button" aria-label="Fotografia anterior">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <figure class="lightbox__figure">
+      <div class="lightbox__media" id="lb-media"></div>
+      <figcaption class="lightbox__caption" id="lb-caption"></figcaption>
+      <p class="lightbox__count" id="lb-count"></p>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" id="lb-next" type="button" aria-label="Próxima fotografia">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+
+  <!-- Música (opcional). Arquivo: assets/music/musica.mp3 -->
+  <audio id="music" src="assets/music/musica.mp3" loop preload="none"></audio>
+  <button class="music-toggle" id="music-toggle" type="button" aria-pressed="false" aria-label="Tocar música" hidden>
+    <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>
+    <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+    <span class="music-toggle__label">Música</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
