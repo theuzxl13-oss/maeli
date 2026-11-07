@@ -478,6 +478,92 @@ html:not(.js) .intro { display: none; }
 }
 
 /* =============================================================
+   2B. NOSSA MÚSICA — DEDICATÓRIA
+   ============================================================= */
+.song-section { padding-top: clamp(24px, 6vh, 64px); }
+
+.song {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: clamp(36px, 8vw, 56px) clamp(22px, 6vw, 48px);
+  text-align: center;
+  border-radius: 18px;
+  background:
+    radial-gradient(500px 260px at 50% 0%, rgba(195, 160, 90, 0.14), transparent 70%),
+    linear-gradient(170deg, rgba(255, 255, 255, 0.75), rgba(234, 210, 207, 0.45));
+  box-shadow: var(--shadow-soft), inset 0 0 0 1px rgba(195, 160, 90, 0.35);
+}
+
+.song__disc {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  margin: 0 auto 1.2rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle, var(--wine-600) 0 26%, transparent 27%),
+    repeating-radial-gradient(circle, #2a0910 0 2px, #3a0d18 2px 4px);
+  box-shadow: 0 10px 24px -8px rgba(58, 13, 24, 0.6), 0 0 0 2px rgba(214, 184, 117, 0.6);
+  animation: spin 6s linear infinite;
+  animation-play-state: paused;
+}
+.song__disc svg { width: 20px; height: 20px; fill: var(--gold-300); }
+.song.is-playing .song__disc { animation-play-state: running; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.song__label {
+  margin: 0;
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 8.5vw, 3.2rem);
+  line-height: 1.2;
+  color: var(--wine-700);
+}
+
+.song__name {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+}
+.song__name span { margin: 0 0.3em; }
+
+.song .ornament { margin: 1rem auto 1.4rem; }
+
+.song__dedication {
+  margin: 0 0 1rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 4.6vw, 1.5rem);
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.song__lyric {
+  margin: 0 0 2rem;
+  font-family: var(--font-script);
+  font-size: clamp(1.8rem, 6.6vw, 2.4rem);
+  line-height: 1.4;
+  color: var(--wine-600);
+}
+
+.song__play {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.song__play svg { width: 20px; height: 20px; fill: var(--gold-300); }
+.song__play .icon-pause { display: none; }
+.song.is-playing .song__play .icon-play { display: none; }
+.song.is-playing .song__play .icon-pause { display: block; }
+
+/* =============================================================
    3. GALERIA — ÁLBUM DE LEMBRANÇAS
    ============================================================= */
 .gallery-section {

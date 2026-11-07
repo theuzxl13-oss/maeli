@@ -577,7 +577,16 @@ const VIDEOS = [
     musicBtn.hidden = false;
   }
 
+  const song = $(".song");
+  const songBtn = $("#song-play");
+  const songLabel = songBtn ? songBtn.querySelector(".song__play-label") : null;
+
   function setPlaying(on) {
+    if (song) song.classList.toggle("is-playing", on);
+    if (songBtn) {
+      songBtn.setAttribute("aria-pressed", String(on));
+      if (!unavailable) songLabel.textContent = on ? "Pausar nossa música" : "Ouvir nossa música";
+    }
     musicBtn.classList.toggle("is-playing", on);
     musicBtn.setAttribute("aria-pressed", String(on));
     musicBtn.setAttribute("aria-label", on ? "Pausar música" : "Tocar música");
@@ -588,6 +597,7 @@ const VIDEOS = [
     setPlaying(false);
     musicBtn.classList.add("is-unavailable");
     label.textContent = "Sem música";
+    if (songLabel) songLabel.textContent = "Música indisponível";
     musicBtn.setAttribute("aria-label", "Música indisponível");
   }
 
@@ -598,7 +608,7 @@ const VIDEOS = [
   });
   audio.addEventListener("pause", () => setPlaying(false));
 
-  musicBtn.addEventListener("click", () => {
+  function toggleMusic() {
     if (unavailable) return;
     if (audio.paused) {
       audio.volume = 0;
@@ -608,7 +618,10 @@ const VIDEOS = [
     } else {
       audio.pause();
     }
-  });
+  }
+
+  musicBtn.addEventListener("click", toggleMusic);
+  if (songBtn) songBtn.addEventListener("click", toggleMusic);
 
   // quando um vídeo começa, a música de fundo pausa para que a voz seja ouvida
   function pauseMusicForVideo() {
